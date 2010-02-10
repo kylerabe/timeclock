@@ -1,0 +1,49 @@
+<h1>Timeclock Administration</h1>
+<p>What do you want to do?</p>
+
+<h2>Manage People</h2>
+<table>
+  <tr>
+    <th>Person</th>
+    <th>Visible?</th>
+    <th colspan=3>Actions</th>
+  </tr>
+
+  <% @people.each do |person| %>
+    <tr class=<%=h cycle('odd', 'even') %>>
+      <td><%=h person.full_name %></td>
+      <td><%=h person.visible %></td>
+      <td><%= link_to 'Edit Time Card', person_events_path(person) %></td>
+      <td><%= link_to 'Edit Person', edit_person_path(person) %></td>
+      <td class="nopadright"><%= link_to 'Delete Person', person,
+          :confirm => 'Are you sure that you can\'t just make them invisible?',
+          :method  => :delete %></td>
+    </tr>
+  <% end %>
+  <tr>
+    <td colspan=5><%= link_to 'Add a New Person', new_person_path %></td>
+  </tr>
+</table>
+
+<h2>Manage Administrators</h2>
+<table>
+  <tr>
+    <th>Administrator</th>
+    <th colspan=2>Actions</th>
+  </tr>
+
+  <% @admins.each do |admin| %>
+    <tr class=<%=h cycle('odd', 'even') %>>
+      <td><%=h admin.username %></td>
+      <td><%= link_to 'Edit Administrator', edit_admin_path(admin) %></td>
+      <td class="nopadright"><%= link_to 'Delete Administrator', admin,
+          :confirm => 'Are you sure?',
+          :method  => :delete %></td>
+    </tr>
+  <% end %>
+  <tr>
+    <td colspan=3><%= link_to 'Add a New Administrator', new_admin_path %></td>
+  </tr>
+</table>
+
+<p><%= link_to 'Log Out', logout_path %></p>

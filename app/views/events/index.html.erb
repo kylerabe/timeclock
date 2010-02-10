@@ -1,0 +1,39 @@
+<h1>Time Card for <%=h @person.full_name %></h1>
+
+<% unless @events.empty? %>
+  <h2>Pay period starting <%=h @period_start.strftime("%B %d, %Y") %></h2>
+
+  <table>
+    <tr>
+      <th>Date and Time</th>
+      <th>In/Out</th>
+      <th>Hours</th>
+      <% if session[:admin_id] %>
+      <th>Actions</th>
+      <% end %>
+    </tr>
+
+    <% @seconds = 0.0; @previous_time = nil %>
+    <%= render :partial => 'event', :collection => @events %>
+
+    <tr>
+      <td colspan=2><strong>Total Time</strong></td>
+      <td><strong><%=h @seconds.seconds_to_hours(2) %></strong></td>
+      <td></td>
+    </tr>
+  </table>
+
+<% end %>
+
+<p>
+  <%= link_to '&laquo; Previous Pay Period', person_events_path(@person, :offset => @offset + 1) %> |
+  <%= link_to_unless @offset == 0, 'Next Pay Period &raquo;', person_events_path(@person, :offset => @offset - 1) %>
+</p>
+
+<% if session[:admin_id] %>
+  <p><%= link_to 'Add New Event', new_person_event_path(@person, :offset => @offset) %>
+  <br />
+  <%= link_to 'Return to Timeclock Administration', admin_index_path %>
+  </p>
+<% end %>
+<%= link_to 'Return to Timeclock', people_path %>

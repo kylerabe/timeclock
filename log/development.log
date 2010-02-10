@@ -1,0 +1,203 @@
+
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-10 16:40:22) [GET]
+  Parameters: {"action"=>"index", "controller"=>"people"}
+Rendering template within layouts/application
+Rendering people/index
+  [4;36;1mPerson Load (18.0ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."visible" = 't') ORDER BY first_name, last_name[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "events" WHERE ("events".person_id = 14) [0m
+  [4;36;1mEvent Load (14.0ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events".person_id = 14) ORDER BY time ASC[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "events" WHERE ("events".person_id = 12) [0m
+  [4;36;1mEvent Load (19.0ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events".person_id = 12) ORDER BY time ASC[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "events" WHERE ("events".person_id = 16) [0m
+  [4;36;1mEvent Load (5.0ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events".person_id = 16) ORDER BY time ASC[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "events" WHERE ("events".person_id = 8) [0m
+  [4;36;1mEvent Load (5.0ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events".person_id = 8) ORDER BY time ASC[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "events" WHERE ("events".person_id = 4) [0m
+  [4;36;1mEvent Load (10.0ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events".person_id = 4) ORDER BY time ASC[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "events" WHERE ("events".person_id = 2) [0m
+  [4;36;1mEvent Load (16.0ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events".person_id = 2) ORDER BY time ASC[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "events" WHERE ("events".person_id = 3) [0m
+  [4;36;1mEvent Load (9.0ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events".person_id = 3) ORDER BY time ASC[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "events" WHERE ("events".person_id = 1) [0m
+  [4;36;1mEvent Load (18.0ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events".person_id = 1) ORDER BY time ASC[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "events" WHERE ("events".person_id = 5) [0m
+  [4;36;1mEvent Load (5.0ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events".person_id = 5) ORDER BY time ASC[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "events" WHERE ("events".person_id = 7) [0m
+  [4;36;1mEvent Load (11.0ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events".person_id = 7) ORDER BY time ASC[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "events" WHERE ("events".person_id = 6) [0m
+  [4;36;1mEvent Load (4.0ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events".person_id = 6) ORDER BY time ASC[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "events" WHERE ("events".person_id = 10) [0m
+  [4;36;1mEvent Load (79.0ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events".person_id = 10) ORDER BY time ASC[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "events" WHERE ("events".person_id = 13) [0m
+  [4;36;1mEvent Load (18.0ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events".person_id = 13) ORDER BY time ASC[0m
+Completed in 1273ms (View: 887, DB: 242) | 200 OK [http://localhost/]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-02-10 16:40:29) [GET]
+  Parameters: {"action"=>"index", "person_id"=>"14", "controller"=>"events"}
+  [4;35;1mPerson Load (1.0ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 14) ORDER BY first_name, last_name[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "events" WHERE (((time BETWEEN '2010-02-01 05:00:00' AND '2010-02-16 05:00:00') AND ("events".person_id = 14)) AND ("events".person_id = 14)) [0m
+  [4;35;1mEvent Load (1.0ms)[0m   [0mSELECT * FROM "events" WHERE ("events".person_id = 14) AND ((time BETWEEN '2010-02-01 05:00:00' AND '2010-02-16 05:00:00') AND ("events".person_id = 14)) ORDER BY time ASC LIMIT 1[0m
+Rendering template within layouts/application
+Rendering events/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "events" WHERE (((time BETWEEN '2010-02-01 05:00:00' AND '2010-02-16 05:00:00') AND ("events".person_id = 14)) AND ("events".person_id = 14)) [0m
+  [4;35;1mEvent Load (2.0ms)[0m   [0mSELECT * FROM "events" WHERE ("events".person_id = 14) AND ((time BETWEEN '2010-02-01 05:00:00' AND '2010-02-16 05:00:00') AND ("events".person_id = 14)) ORDER BY time ASC[0m
+Rendered events/_event (1.0ms)
+Rendered events/_event (5.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (1.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Completed in 264ms (View: 30, DB: 6) | 200 OK [http://localhost/people/14/events]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-02-10 16:40:31) [GET]
+  Parameters: {"action"=>"index", "person_id"=>"14", "controller"=>"events", "offset"=>"1"}
+  [4;36;1mPerson Load (0.0ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 14) ORDER BY first_name, last_name[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "events" WHERE (((time BETWEEN '2010-01-16 05:00:00' AND '2010-02-01 05:00:00') AND ("events".person_id = 14)) AND ("events".person_id = 14)) [0m
+  [4;36;1mEvent Load (1.0ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events".person_id = 14) AND ((time BETWEEN '2010-01-16 05:00:00' AND '2010-02-01 05:00:00') AND ("events".person_id = 14)) ORDER BY time ASC LIMIT 1[0m
+Rendering template within layouts/application
+Rendering events/index
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "events" WHERE (((time BETWEEN '2010-01-16 05:00:00' AND '2010-02-01 05:00:00') AND ("events".person_id = 14)) AND ("events".person_id = 14)) [0m
+  [4;36;1mEvent Load (2.0ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events".person_id = 14) AND ((time BETWEEN '2010-01-16 05:00:00' AND '2010-02-01 05:00:00') AND ("events".person_id = 14)) ORDER BY time ASC[0m
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (1.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (1.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Completed in 46ms (View: 12, DB: 4) | 200 OK [http://localhost/people/14/events?offset=1]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-02-10 16:40:33) [GET]
+  Parameters: {"action"=>"index", "person_id"=>"14", "controller"=>"events", "offset"=>"2"}
+  [4;35;1mPerson Load (0.0ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 14) ORDER BY first_name, last_name[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "events" WHERE (((time BETWEEN '2010-01-01 05:00:00' AND '2010-01-16 05:00:00') AND ("events".person_id = 14)) AND ("events".person_id = 14)) [0m
+  [4;35;1mEvent Load (1.0ms)[0m   [0mSELECT * FROM "events" WHERE ("events".person_id = 14) AND ((time BETWEEN '2010-01-01 05:00:00' AND '2010-01-16 05:00:00') AND ("events".person_id = 14)) ORDER BY time ASC LIMIT 1[0m
+Rendering template within layouts/application
+Rendering events/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "events" WHERE (((time BETWEEN '2010-01-01 05:00:00' AND '2010-01-16 05:00:00') AND ("events".person_id = 14)) AND ("events".person_id = 14)) [0m
+  [4;35;1mEvent Load (2.0ms)[0m   [0mSELECT * FROM "events" WHERE ("events".person_id = 14) AND ((time BETWEEN '2010-01-01 05:00:00' AND '2010-01-16 05:00:00') AND ("events".person_id = 14)) ORDER BY time ASC[0m
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (1.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (1.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Completed in 44ms (View: 12, DB: 4) | 200 OK [http://localhost/people/14/events?offset=2]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2010-02-10 16:40:35) [GET]
+  Parameters: {"action"=>"index", "person_id"=>"14", "controller"=>"events", "offset"=>"3"}
+  [4;36;1mPerson Load (0.0ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 14) ORDER BY first_name, last_name[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "events" WHERE (((time BETWEEN '2009-12-16 05:00:00' AND '2010-01-01 05:00:00') AND ("events".person_id = 14)) AND ("events".person_id = 14)) [0m
+  [4;36;1mEvent Load (1.0ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events".person_id = 14) AND ((time BETWEEN '2009-12-16 05:00:00' AND '2010-01-01 05:00:00') AND ("events".person_id = 14)) ORDER BY time ASC LIMIT 1[0m
+Rendering template within layouts/application
+Rendering events/index
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "events" WHERE (((time BETWEEN '2009-12-16 05:00:00' AND '2010-01-01 05:00:00') AND ("events".person_id = 14)) AND ("events".person_id = 14)) [0m
+  [4;36;1mEvent Load (3.0ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events".person_id = 14) AND ((time BETWEEN '2009-12-16 05:00:00' AND '2010-01-01 05:00:00') AND ("events".person_id = 14)) ORDER BY time ASC[0m
+Rendered events/_event (1.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (1.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (1.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (1.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (1.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (1.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (1.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Rendered events/_event (0.0ms)
+Completed in 54ms (View: 20, DB: 5) | 200 OK [http://localhost/people/14/events?offset=3]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-02-10 16:40:38) [GET]
+  Parameters: {"action"=>"index", "controller"=>"people"}
+Rendering template within layouts/application
+Rendering people/index
+  [4;35;1mPerson Load (1.0ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."visible" = 't') ORDER BY first_name, last_name[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "events" WHERE ("events".person_id = 14) [0m
+  [4;35;1mEvent Load (15.0ms)[0m   [0mSELECT * FROM "events" WHERE ("events".person_id = 14) ORDER BY time ASC[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "events" WHERE ("events".person_id = 12) [0m
+  [4;35;1mEvent Load (17.0ms)[0m   [0mSELECT * FROM "events" WHERE ("events".person_id = 12) ORDER BY time ASC[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "events" WHERE ("events".person_id = 16) [0m
+  [4;35;1mEvent Load (4.0ms)[0m   [0mSELECT * FROM "events" WHERE ("events".person_id = 16) ORDER BY time ASC[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "events" WHERE ("events".person_id = 8) [0m
+  [4;35;1mEvent Load (5.0ms)[0m   [0mSELECT * FROM "events" WHERE ("events".person_id = 8) ORDER BY time ASC[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "events" WHERE ("events".person_id = 4) [0m
+  [4;35;1mEvent Load (11.0ms)[0m   [0mSELECT * FROM "events" WHERE ("events".person_id = 4) ORDER BY time ASC[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "events" WHERE ("events".person_id = 2) [0m
+  [4;35;1mEvent Load (16.0ms)[0m   [0mSELECT * FROM "events" WHERE ("events".person_id = 2) ORDER BY time ASC[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "events" WHERE ("events".person_id = 3) [0m
+  [4;35;1mEvent Load (9.0ms)[0m   [0mSELECT * FROM "events" WHERE ("events".person_id = 3) ORDER BY time ASC[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "events" WHERE ("events".person_id = 1) [0m
+  [4;35;1mEvent Load (18.0ms)[0m   [0mSELECT * FROM "events" WHERE ("events".person_id = 1) ORDER BY time ASC[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "events" WHERE ("events".person_id = 5) [0m
+  [4;35;1mEvent Load (4.0ms)[0m   [0mSELECT * FROM "events" WHERE ("events".person_id = 5) ORDER BY time ASC[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "events" WHERE ("events".person_id = 7) [0m
+  [4;35;1mEvent Load (18.0ms)[0m   [0mSELECT * FROM "events" WHERE ("events".person_id = 7) ORDER BY time ASC[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "events" WHERE ("events".person_id = 6) [0m
+  [4;35;1mEvent Load (4.0ms)[0m   [0mSELECT * FROM "events" WHERE ("events".person_id = 6) ORDER BY time ASC[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "events" WHERE ("events".person_id = 10) [0m
+  [4;35;1mEvent Load (10.0ms)[0m   [0mSELECT * FROM "events" WHERE ("events".person_id = 10) ORDER BY time ASC[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "events" WHERE ("events".person_id = 13) [0m
+  [4;35;1mEvent Load (19.0ms)[0m   [0mSELECT * FROM "events" WHERE ("events".person_id = 13) ORDER BY time ASC[0m
+Completed in 452ms (View: 280, DB: 161) | 200 OK [http://localhost/people]

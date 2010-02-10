@@ -1,0 +1,31 @@
+<h1>Mass Street Music Timeclock</h1>
+
+<p>It's currently <%=h Time.now.strftime("%I:%M %p on %A, %B %d, %Y") %></p>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Status</th>
+    <th>Time</th>
+  </tr>
+
+<% @people.each do |person| %>
+  <tr class=<%=h cycle('odd', 'even') %>>
+    <td>
+      <% if person.status == 'In' %>
+        <span class="in"><%=h person.full_name %></span>
+      <% else %>
+        <%=h person.full_name %>
+      <% end %>
+    </td>
+    <td><%=h person.status %></td>
+    <td><%=h person.events.newest.local_time unless person.events.empty? %></td>
+    <td><%= link_to 'Clock In/Out', punch_clock_url(person), :method => :post %></td>
+    <td class="nopadright"><%= link_to 'Show Time Card', person_events_path(person) %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<!-- <%= link_to 'New person', new_person_path %> -->

@@ -1,0 +1,15 @@
+<h1>Timeclock Login</h1>
+<% form_tag :url => {:action => 'login_validate'} do %>
+  <p>
+    <%= label_tag :username %><br />
+    <%= text_field_tag :username %>
+  </p>
+  <p>
+    <%= label_tag :password %><br />
+    <%= password_field_tag %>
+  </p>
+  <p>
+    <%= submit_tag 'Log In' %>
+  </p>
+<% end %>
+<script language="JavaScript"> document.forms[0].username.focus(); </script>

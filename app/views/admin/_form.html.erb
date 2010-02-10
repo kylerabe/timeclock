@@ -1,0 +1,22 @@
+<% form_for @admin, :url => {:action => @form_action} do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :username %><br />
+    <%= f.text_field :username %>
+  </p>
+  <p>
+    <%= f.label :new_password, 'Password' %><br />
+    <%= f.password_field :new_password %>
+  </p>
+  <p>
+    <%= f.label :new_password_confirmation, 'Password confirmation' %><br />
+    <%= f.password_field :new_password_confirmation %>
+  </p>
+  <p>
+    <%= f.submit 'Submit' %>
+  </p>
+<% end %>
+<script language="JavaScript"> document.forms[0].admin_username.focus(); </script>
+
+<%= link_to 'Back to Timeclock Administration', admin_index_path %>

@@ -1,0 +1,22 @@
+<% form_for(@person) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </p>
+  <p>
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </p>
+  <p>
+    <%= f.label :visible %><br />
+    <%= f.check_box :visible %>
+  </p>
+  <p>
+    <%= f.submit 'Submit' %>
+  </p>
+<% end %>
+<script language="JavaScript"> document.forms[0].person_first_name.focus(); </script>
+
+<%= link_to 'Back to Timeclock Administration', admin_index_path %>

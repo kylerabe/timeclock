@@ -1,0 +1,19 @@
+<tr>
+  <td><%=h event.local_time %></td>
+  <td><%=h event.action_name %></td>
+  <td>
+    <% if event.action == false && !@previous_time.nil? %>
+      <% these_seconds = event.time - @previous_time %>
+      <%=h these_seconds.seconds_to_hours(2) %>
+      <% @seconds += these_seconds %>
+    <% end %>
+  </td>
+  <% if session[:admin_id] %>
+  <td>
+    <%= link_to 'Edit',   edit_person_event_path(@person, event, :offset => @offset) %>
+    <%= link_to 'Delete', [@person, event], :confirm => 'Are you sure?',
+                                            :method => :delete %>
+  </td>
+  <% end %>
+</tr>
+<% @previous_time = event.time %>

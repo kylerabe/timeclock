@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  time: 2009-10-25 13:00:23
+  type: false
+
+two:
+  time: 2009-10-25 13:00:23
+  type: false

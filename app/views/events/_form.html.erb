@@ -1,0 +1,14 @@
+<% form_for([@person, @event]) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.select :action, [["In", true], ["Out", false]] %>
+    at
+    <%= f.datetime_select :time %>
+  </p>
+  <p>
+    <%= f.submit 'Submit' %>
+  </p>
+<% end %>
+<script language="JavaScript"> document.forms[0].event_action.focus(); </script>
+<%= link_to 'Cancel', person_events_path(@person) %>
